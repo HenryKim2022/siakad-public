@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+#/docs/
+#/docs_html/
+#/plugins/*
+!/plugins/flot-old/
+=======
+>>>>>>> 991ef7d320fecb7d1c6ace8744b567cdef828f1b
+/.github/
+/.lgtm.yml
