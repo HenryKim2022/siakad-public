@@ -51,6 +51,10 @@
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="<?= base_url() ?>/adminLTE/plugins/jquery/jquery.min.js"></script>
+<!-- jQuery Slim Cdn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.slim.js" integrity="sha512-M3zrhxXOYQaeBJYLBv7DsKg2BWwSubf6htVyjSkjc9kPqx7Se98+q1oYyBJn2JZXzMaZvUkB8QzKAmeVfzj9ug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Popper Cdn  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- Bootstrap 4 -->
 <script src="<?= base_url() ?>/adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- DataTables  & Plugins -->
@@ -191,7 +195,44 @@
 
 
 
+<!-- Carousel Animation -->
+<script>
+    (function($) {
+        //Function to animate slider captions
+        function doAnimations(elems) {
+            //Cache the animationend event in a variable
+            var animEndEv = "webkitAnimationEnd animationend";
 
+            elems.each(function() {
+                var $this = $(this),
+                    $animationType = $this.data("animation");
+                $this.addClass($animationType).one(animEndEv, function() {
+                    $this.removeClass($animationType);
+                });
+            });
+        }
+
+        //Variables on page load
+        var $myCarousel = $("#carouselid"),
+            $firstAnimatingElems = $myCarousel
+            .find(".carousel-item:first")
+            .find("[data-animation ^= 'animated']");
+
+        //Initialize carousel
+        $myCarousel.carousel();
+
+        //Animate captions in first slide on page load
+        doAnimations($firstAnimatingElems);
+
+        //Other slides to be animated on carousel slide event
+        $myCarousel.on("slide.bs.carousel", function(e) {
+            var $animatingElems = $(e.relatedTarget).find(
+                "[data-animation ^= 'animated']"
+            );
+            doAnimations($animatingElems);
+        });
+    })(jQuery);
+</script>
 
 
 

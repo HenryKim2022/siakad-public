@@ -27,6 +27,10 @@
     <!-- //Date Range Picker -->
     <link rel="stylesheet" href="<?= base_url('adminLTE/plugins-bs/daterangpicker-pack-hk/daterangepicker.css') ?>">
 
+    <!-- Animate for Carousel (Use Old Ver that works!)  -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
 
     <style>
         /* Fixed Navbar */
@@ -405,6 +409,74 @@
             width: 100%;
             /* You may want to include this as bootstrap applies these styles too */
         }
+
+
+
+        /*  */
+        /* Carousel Style */
+        .carousel-indicators {
+            bottom: 0;
+        }
+
+        .carousel-control.right,
+        .carousel-control.left {
+            background-image: none;
+        }
+
+        .carousel-item {
+            min-height: 350px;
+            height: 100%;
+            width: 100%;
+        }
+
+        .carousel-caption h3,
+        .carousel .icon-container,
+        .carousel-caption button {
+            background-color: #09c;
+        }
+
+        .carousel-caption h3 {
+            padding: .5em;
+        }
+
+        .carousel .icon-container {
+            display: inline-block;
+            font-size: 25px;
+            line-height: 25px;
+            padding: 1em;
+            text-align: center;
+            border-radius: 50%;
+        }
+
+        .carousel-caption button {
+            border-color: #00bfff;
+            margin-top: 1em;
+        }
+
+        /* Animation delays */
+        .carousel-caption h3:first-child {
+            animation-delay: 1s;
+        }
+
+        .carousel-caption h3:nth-child(2) {
+            animation-delay: 2s;
+        }
+
+        .carousel-caption button {
+            animation-delay: 3s;
+        }
+
+
+        .p {
+            padding-top: 125px;
+            text-align: center;
+        }
+
+        .p a {
+            text-decoration: underline;
+        }
+
+        /* .Carousel Style */
     </style>
 
 
