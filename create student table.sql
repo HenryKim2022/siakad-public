@@ -1,3 +1,8 @@
+-- CREATE DB
+CREATE DATABASE IF NOT EXISTS siakad;
+USE siakad;
+
+
 -- USER SIGNUP/SIGNIN
 CREATE TABLE siakad.user_auth(
     username varchar(25) NOT NULL PRIMARY KEY,
