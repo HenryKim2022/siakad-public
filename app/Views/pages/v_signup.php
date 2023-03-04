@@ -27,13 +27,17 @@
             margin-top: 0 !important;
         }
 
-        .login-box-footer-msg {
+
+        span.brand-text.font-weight-light.h1:hover {
+            color: inherit;
+        }
+
+        .register-box-footer-msg {
             margin: 0;
             padding: 0 20px;
             text-align: center;
         }
 
-        login-box,
         .register-box {
             width: auto !important;
             padding: 0% 5% !important;
@@ -56,13 +60,17 @@
             -webkit-box-shadow: 0 0 0px 1000px inherit inset;
             transition: background-color 5000s ease-in-out 0s;
         }
+
+
+        /*  */
+        /*  */
     </style>
 </head>
 
 
 
 <body class="hold-transition register-page">
-    <div class="register-box w-25">
+    <div class="register-box">
         <div class="card card-outline card-primary">
             <!-- <div class="card-header text-center">
                 <a href="<?= base_url(); ?>" class="h1"><b>SIAKAD</b> CAMPUS</a>
@@ -154,7 +162,7 @@
 
                 <br>
                 <hr>
-                <div class="login-box-footer-msg d-flex justify-content-center">
+                <div class="register-box-footer-msg d-flex justify-content-center">
                     <a href="<?= 'signin' ?>" class="text-center">Already have an account? (Signin)</a>
                 </div>
             </div>
@@ -352,6 +360,7 @@
                     inputFields.classList.add('navbar-dark');
                     inputFields.classList.remove('navbar-light');
                 }
+                localStorage.setItem('theme', 'dark');
 
             } else {
                 localStorage.setItem('theme', 'light');

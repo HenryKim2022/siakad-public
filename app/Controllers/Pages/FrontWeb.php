@@ -4,15 +4,17 @@ namespace App\Controllers\Pages;
 
 use App\Controllers\BaseController;
 use App\Modules\Breadcrumbs\Breadcrumbs;
-
+use App\Models\carousel_mod;
 
 class FrontWeb extends BaseController
 {
 
     protected $session;
+    protected $caroumod;
     public function __construct()
     {
         $this->session = \Config\Services::session();
+        $this->caroumod = new carousel_mod();
     }
 
 
@@ -33,6 +35,7 @@ class FrontWeb extends BaseController
             'title'         => $title,
             'static_url'    => $static_url,
             'isi'           => 'pages/frontweb_pages/news',
+            'carousel_data' => $this->caroumod->getDetails(),
             'breadcrumbs'   => $breadcrumbs->buildAuto()
         ];
 

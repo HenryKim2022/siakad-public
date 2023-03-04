@@ -10,7 +10,7 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?= base_url('adminLTE/plugins/fontawesome-free/css/all.min.css') ?>">
+    <!-- <link rel="stylesheet" href="?= base_url('adminLTE/plugins/fontawesome-free/css/all.min.css') ?>"> -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="<?= base_url('adminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css') ?>">
     <!-- Toastr -->
@@ -24,20 +24,25 @@
             margin-top: 0 !important;
         }
 
-        .login-box-footer-msg {
+        span.brand-text.font-weight-light.h1:hover {
+            color: inherit;
+        }
+
+        .signin-box-footer-msg {
             margin: 0;
             padding: 0 20px;
             text-align: center;
         }
 
-        login-box,
-        .register-box {
+        .signin-box {
             width: auto !important;
             padding: 0% 5% !important;
             overflow: hidden;
             text-align: center;
         }
 
+        /*  */
+        /*  */
         /* Change Autocomplete styles in Chrome*/
         input:-webkit-autofill,
         input:-webkit-autofill:hover,
@@ -53,19 +58,23 @@
             -webkit-box-shadow: 0 0 0px 1000px inherit inset;
             transition: background-color 5000s ease-in-out 0s;
         }
+
+
+        /*  */
+        /*  */
     </style>
 </head>
 
 
 
 <body class="hold-transition register-page">
-    <div class="register-box w-25">
+    <div class="register-box">
         <div class="card card-outline card-primary">
 
             <div class="card-header text-center">
                 <div class="row d-flex justify-content-center">
                     <div class="d-flex justify-content-end">
-                        <div class="col-sm mt-auto mb-auto">
+                        <div class="col-sm m-auto">
                             <img class="float-right" src="<?= base_url() ?>/Logo.png" alt="AdminLTE Logo" class="brand-image" style="opacity: .8; height: 48px; width: 48px;">
                         </div>
                         <div class="col-sm mt-auto mb-auto">
@@ -117,7 +126,6 @@
                 <!-- </form> -->
                 <?php echo form_close(); ?>
 
-
                 <br>
                 <hr>
                 <div class="login-box-footer-msg d-flex justify-content-center">
@@ -130,6 +138,9 @@
         </div><!-- /.card -->
     </div>
     <!-- /.register-box -->
+
+
+
 
     <!-- jQuery -->
     <script src="<?= base_url() ?>/adminLTE/plugins/jquery/jquery.min.js"></script>
@@ -317,6 +328,7 @@
                     inputFields.classList.add('navbar-dark');
                     inputFields.classList.remove('navbar-light');
                 }
+                localStorage.setItem('theme', 'dark');
 
             } else {
                 localStorage.setItem('theme', 'light');
@@ -325,6 +337,29 @@
         }
     </script>
 
+
+    <!-- Dark/Light Slider -->
+    <script>
+        var toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        var currentTheme = localStorage.getItem('theme');
+        var inputFields = document.querySelector('input');
+
+        if (currentTheme) {
+            if (currentTheme === 'dark') {
+                if (!document.body.classList.contains('dark-mode')) {
+                    document.body.classList.add("dark-mode");
+                }
+                if (inputFields.classList.contains('navbar-light')) {
+                    inputFields.classList.add('navbar-dark');
+                    inputFields.classList.remove('navbar-light');
+                }
+
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+
+        }
+    </script>
 
 
 

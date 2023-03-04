@@ -1,33 +1,37 @@
     <div class="card">
         <div class="card-body">
-            <div id="carouselid" class="carousel slide" data-ride="carousel">
+            <div id="carouselid" class="carousel slide" data-ride="carousel" data-interval="3000">
                 <ol class="carousel-indicators">
-                    <li data-target="#carouselid" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselid" data-slide-to="1"></li>
-                    <li data-target="#carouselid" data-slide-to="2"></li>
+                    <?php {
+                        $i = 0;
+                        foreach ($carousel_data as $index => $image) :
+                            echo "<li data-target='#carouselid' data-slide-to='$i' class='active'></li>";
+                            $i++;
+                        endforeach;
+                    } ?>
                 </ol>
                 <div class="carousel-inner">
 
-                    <div class="carousel-item active">
-                        <img class="d-block w-100 h-5 unselectable" src="<?= base_url('public/carousel/1.png') ?>" draggable="false" (dragstart)="false;" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100 unselectable" src="<?= base_url('public/carousel/2.png') ?>" draggable="false" (dragstart)="false;" alt="Second slide">
-                        <div class="carousel-caption d-none d-md-block">
-                            <div class="card-text m-0">
-                                <div class="bg-dark text-white">
-                                    <h5 class="mb-0"><u>AAAAAAAAAAAAAAAAAAAAAAAAAAA</u></h5>
+                    <!-- Carousel from DB -->
+                    <?php foreach ($carousel_data as $index => $image) : ?>
+                        <div class="carousel-item<?= !$index ? ' active' : '' ?>">
+                            <img class="d-block w-100 h-5 unselectable" src="<?= $image['carousel_url'] ?>" alt="<?= $image['carousel_alt'] ?>" />
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="card-text m-0">
+                                    <div class="bg-dark text-white">
+                                        <h5 class="mb-0"><u><?= $image['carousel_title'] ?></u></h5>
+                                    </div>
+                                    <b>
+                                        <p class="text-md-center mt-0 mb-0 bg-dark text-white"><?= $image['carousel_desc'] ?></p>
+                                    </b>
                                 </div>
-                                <b>
-                                    <p class="text-md-center mt-0 mb-0 bg-dark text-white">BBBBBBBBBBBBBB</p>
-                                </b>
                             </div>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100 unselectable" src="<?= base_url('public/carousel/3.png') ?>" draggable="false" (dragstart)="false;" alt="Third slide">
-                    </div>
+                    <?php endforeach; ?>
+
+                    <!-- /.Carousel from DB -->
                 </div>
+
                 <a class="carousel-control-prev" href="#carouselid" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
