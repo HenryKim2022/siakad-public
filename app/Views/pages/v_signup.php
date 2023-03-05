@@ -18,6 +18,8 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url('adminLTE/dist/css/adminlte.min.css') ?>">
 
+    <!-- Webhost Branding -->
+    <link rel="stylesheet" href="<?= base_url('vendor/000webhost/css/branding.css') ?>">
 
 
 

@@ -18,6 +18,11 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url('adminLTE/dist/css/adminlte.min.css') ?>">
 
+    <!-- Webhost Branding -->
+    <link rel="stylesheet" href="<?= base_url('vendor/000webhost/css/branding.css') ?>">
+
+
+
     <style>
         body {
             background: #f2f2f2 url(https://assets.siakadcloud.com/assets/v1/img/pattern/pat_04.png) repeat;
