@@ -138,7 +138,7 @@
 </script>
 
 <!-- EDITABLE -->
-<!-- <script type="text/javascript" src="<?= base_url() ?>/vendor/jquery-tabledit/jquery.tabledit.js"></script>
+<!-- <script type="text/javascript" src="?= base_url() ?>/vendor/jquery-tabledit/jquery.tabledit.js"></script>
 <script>
     $(document).ready(function() {
         $('#data_table').Tabledit({
@@ -155,7 +155,7 @@
                 ]
             },
             hideIdentifier: false,
-            url: "<?php base_url('/myprofile') ?>",
+            url: "?php base_url('/myprofile') ?>",
             onSuccess: function(data, textStatus, jqXHR) {
                 alert("OK")
             },
@@ -263,7 +263,7 @@
 </script>
 
 
-<!-- Sidebar Active
+<!-- Sidebar Active -->
 <script>
     /** add active class and stay opened when selected */
     var url = window.location;
@@ -275,7 +275,9 @@
     $('ul.nav-treeview a').filter(function() {
         return this.href == url;
     }).parentsUntil(".nav-sidebar > .nav-treeview").addClass('menu-open').prev('a').addClass('active');
-</script> -->
+</script>
+
+
 
 
 <script src="<?= base_url('adminLTE/plugins-bs/daterangpicker-pack-hk/lastest_moment.min.js') ?>"></script>

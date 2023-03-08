@@ -30,12 +30,14 @@ class FrontWeb extends BaseController
 
 
         $breadcrumbs = new Breadcrumbs();
+        $arrCaro_data = $this->caroumod->getDetails();
+
         $data = [
             'sitename'      => 'SIAKAD Campus',
             'title'         => $title,
             'static_url'    => $static_url,
             'isi'           => 'pages/frontweb_pages/news',
-            'carousel_data' => $this->caroumod->getDetails(),
+            'carousel_data' => $arrCaro_data,
             'breadcrumbs'   => $breadcrumbs->buildAuto()
         ];
 

@@ -12,7 +12,7 @@ class carousel_mod extends Model
 
     //Add new student, into db-> load it into table list of carousel data
     protected $primaryKey = 'carousel_id';
-    protected $allowedFields = ['carousel_id', 'carousel_title', 'carousel_alt', 'carousel_desc', 'carousel_status', 'carousel_url'];
+    protected $allowedFields = ['carousel_id', 'carousel_title', 'carousel_alt', 'carousel_desc', 'carousel_status', 'carousel_img_url', 'carousel_url'];
 
 
     public function getDetails($carou_id = false)

@@ -27,9 +27,6 @@
     <!-- //Date Range Picker -->
     <link rel="stylesheet" href="<?= base_url('adminLTE/plugins-bs/daterangpicker-pack-hk/daterangepicker.css') ?>">
 
-    <!-- Webhost Branding -->
-    <link rel="stylesheet" href="<?= base_url('vendor/000webhost/css/branding.css') ?>">
-
     <!-- Animate for Carousel (Use Old Ver that works!)  -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -139,6 +136,7 @@
         }
 
         .unselectable {
+            z-index: 0 !important;
             user-select: none;
             -moz-user-select: none;
             -webkit-user-drag: none;
@@ -452,9 +450,12 @@
         }
 
         .carousel-caption button {
+            z-index: 3;
             border-color: #00bfff;
             margin-top: 1em;
         }
+
+
 
         /* Animation delays */
         .carousel-caption h3:first-child {
@@ -466,7 +467,8 @@
         }
 
         .carousel-caption button {
-            animation-delay: 3s;
+            animation-delay: 2s;
+            pointer-events: auto;
         }
 
 
@@ -478,6 +480,7 @@
         .p a {
             text-decoration: underline;
         }
+
 
         /* .Carousel Style */
     </style>
