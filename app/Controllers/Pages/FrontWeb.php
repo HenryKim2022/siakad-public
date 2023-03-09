@@ -11,10 +11,12 @@ class FrontWeb extends BaseController
 
     protected $session;
     protected $caroumod;
+    protected $breadcrumbs;
     public function __construct()
     {
         $this->session = \Config\Services::session();
         $this->caroumod = new carousel_mod();
+        $this->breadcrumbs = new Breadcrumbs();
     }
 
 
@@ -28,18 +30,18 @@ class FrontWeb extends BaseController
             $static_url = base_url('');
         }
 
-
-        $breadcrumbs = new Breadcrumbs();
-        $arrCaro_data = $this->caroumod->getDetails();
-
-        $data = [
-            'sitename'      => 'SIAKAD Campus',
-            'title'         => $title,
-            'static_url'    => $static_url,
-            'isi'           => 'pages/frontweb_pages/news',
-            'carousel_data' => $arrCaro_data,
-            'breadcrumbs'   => $breadcrumbs->buildAuto()
-        ];
+        if ($this->caroumod->getDetails()) {      //IF RESP == NOT NULL
+            $data = [
+                'sitename'      => 'SIAKAD Campus',
+                'title'         => $title,
+                'static_url'    => $static_url,
+                'isi'           => 'pages/frontweb_pages/news',
+                'carousel_data' => $this->caroumod->getDetails(),
+                'breadcrumbs'   => $this->breadcrumbs->buildAuto()
+            ];
+        } else {      //IF RESP == NULL
+            return redirect()->to(base_url(''));
+        }
 
         return view('layouts/frontweb_layouts/v_frontweb_wrapper', $data);
     }
@@ -50,13 +52,12 @@ class FrontWeb extends BaseController
         $title = "Help";
         $static_url = base_url('');
 
-        $breadcrumbs = new Breadcrumbs();
         $data = [
             'sitename'      => 'SIAKAD Campus',
             'title'         => $title,
             'static_url'    => $static_url,
             'isi'           => 'pages/frontweb_pages/help',
-            'breadcrumbs'   => $breadcrumbs->buildAuto()
+            'breadcrumbs'   => $this->breadcrumbs->buildAuto()
         ];
 
         return view('layouts/frontweb_layouts/v_frontweb_wrapper', $data);
@@ -66,13 +67,12 @@ class FrontWeb extends BaseController
         $title = "Contacts";
         $static_url = base_url('');
 
-        $breadcrumbs = new Breadcrumbs();
         $data = [
             'sitename'      => 'SIAKAD Campus',
             'title'         => $title,
             'static_url'    => $static_url,
             'isi'           => 'pages/frontweb_pages/contacts',
-            'breadcrumbs'   => $breadcrumbs->buildAuto()
+            'breadcrumbs'   => $this->breadcrumbs->buildAuto()
         ];
 
         return view('layouts/frontweb_layouts/v_frontweb_wrapper', $data);
@@ -84,13 +84,12 @@ class FrontWeb extends BaseController
         $title = "About Us";
         $static_url = base_url('');
 
-        $breadcrumbs = new Breadcrumbs();
         $data = [
             'sitename'      => 'SIAKAD Campus',
             'title'         => $title,
             'static_url'    => $static_url,
             'isi'           => 'pages/frontweb_pages/aboutus',
-            'breadcrumbs'   => $breadcrumbs->buildAuto()
+            'breadcrumbs'   => $this->breadcrumbs->buildAuto()
         ];
 
         return view('layouts/frontweb_layouts/v_frontweb_wrapper', $data);
@@ -101,13 +100,12 @@ class FrontWeb extends BaseController
         $title = "Supports";
         $static_url = base_url('');
 
-        $breadcrumbs = new Breadcrumbs();
         $data = [
             'sitename'      => 'SIAKAD Campus',
             'title'         => $title,
             'static_url'    => $static_url,
             'isi'           => 'pages/frontweb_pages/supports',
-            'breadcrumbs'   => $breadcrumbs->buildAuto()
+            'breadcrumbs'   => $this->breadcrumbs->buildAuto()
         ];
 
         return view('layouts/frontweb_layouts/v_frontweb_wrapper', $data);
@@ -119,30 +117,29 @@ class FrontWeb extends BaseController
         $title = "Email Us";
         $static_url = base_url('');
 
-        $breadcrumbs = new Breadcrumbs();
         $data = [
             'sitename'      => 'SIAKAD Campus',
             'title'         => $title,
             'static_url'    => $static_url,
             'isi'           => 'pages/frontweb_pages/emailus',
-            'breadcrumbs'   => $breadcrumbs->buildAuto()
+            'breadcrumbs'   => $this->breadcrumbs->buildAuto()
         ];
 
         return view('layouts/frontweb_layouts/v_frontweb_wrapper', $data);
     }
+
 
     public function callus()
     {
         $title = "Call Us";
         $static_url = base_url('');
 
-        $breadcrumbs = new Breadcrumbs();
         $data = [
             'sitename'      => 'SIAKAD Campus',
             'title'         => $title,
             'static_url'    => $static_url,
             'isi'           => 'pages/frontweb_pages/callus',
-            'breadcrumbs'   => $breadcrumbs->buildAuto()
+            'breadcrumbs'   => $this->breadcrumbs->buildAuto()
         ];
 
         return view('layouts/frontweb_layouts/v_frontweb_wrapper', $data);

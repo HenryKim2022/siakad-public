@@ -21,12 +21,17 @@ class Students_Data extends BaseController
     // Show student data list in table
     public function index()
     {
-        $data = [
-            'title'         => 'Students Data',
-            'isi'           => 'pages/users_pages/data_manages/v_students_data',
-            'student_data'  => $this->studentmod->getDetails(),
-            'breadcrumbs'   => $this->breadcrumbs->buildAuto()
-        ];
+
+        if ($this->studentmod->getDetails()) {      //IF RESP == NOT NULL
+            $data = [
+                'title'         => 'Students Data',
+                'isi'           => 'pages/users_pages/data_manages/v_students_data',
+                'student_data'  => $this->studentmod->getDetails(),
+                'breadcrumbs'   => $this->breadcrumbs->buildAuto()
+            ];
+        } else {    //IF RESP == NULL THEN 
+            return redirect()->to(base_url('/admin/students-data'));
+        }
 
         return view('layouts/users_layouts/v_wrapper', $data);
     }

@@ -60,9 +60,9 @@ CREATE TABLE IF NOT EXISTS siakad.students_data (
 
 -- APPEND STUDENT DATA by ADMIN
 INSERT INTO siakad.students_data VALUES
-    ('1152125001','Henry','Kim','Male','Earth','1998-8-26','Mt. Sindurs','henryk@example.com',
-    '+6282281190072','Dad','Heavens', '+6282281190072','Mom','General Sudirman','+6282281190072','','',''),
-    ('1152125002','Mr. Admin','Kim','Male','Earth','1998-8-26','Mt. Sindurs','henryk@example.com',
-    '+6282281190073','Dad','Heavens', '+6282281190073','Mom','General Sudirman','+6282281190073','','',''),
-    ('1152125003','Mr. Muhammad','Ramdan Pujianto','Male','Earth','1999-9-12','Balaradja','mramdanpujianto@example.com',
-    '+6282281190074','Dad','Balaradja', '+6282281190074','Mom','General Sudirman','+6282281190074','','','');
+    ("1152125001","Henry","Kim","Male","Earth","1998-8-8","Mt. Dores","henryk@example.com",
+    "+6282200000000","Dad","Heavens", "+6282200000000","Mom","General Soed","+6282200000000","","",""),
+    ("1152125002","Mr. Admin","Kim","Male","Earth","1998-8-26","Mt. Dores","henryk@example.com",
+    "+6282200000000","Dad","Heavens", "+6282200000000","Mom","General Soed","+6282200000000","","",""),
+    ("1152125003","Mr. Muhammad","Ramdan Pujianto","Male","Earth","1999-9-12","Balaradja","mramdanpujianto@example.com",
+    "+6282200000000","Dad","Balaradja", "+6282200000000","Mom","General Soed","+6282200000000","","","");

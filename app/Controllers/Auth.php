@@ -53,7 +53,7 @@ class Auth extends BaseController
                 'first_na' => $this->request->getPost('first_na'),
                 'last_na' => $this->request->getPost('last_na'),
                 'username' => $this->request->getPost('username'),
-                'level' => 5,
+                'level' => $this->request->getPost('level'),
                 'phone' => $this->request->getPost('phone'),
                 'email' => $this->request->getPost('email'),
                 'password' => $this->request->getPost('password')

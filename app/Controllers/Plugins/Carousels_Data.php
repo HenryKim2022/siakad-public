@@ -21,12 +21,17 @@ class Carousels_Data extends BaseController
     // Show carousel data list in table
     public function index()
     {
-        $data = [
-            'title'             => 'Carousels Data',
-            'isi'               => 'pages/users_pages/data_manages/v_plugins_data',
-            'carousel_data'     => $this->caroumod->getDetails(),
-            'breadcrumbs'       => $this->breadcrumbs->buildAuto()
-        ];
+
+        if ($this->caroumod->getDetails()) {     //IF RESP == NOT NULL
+            $data = [
+                'title'             => 'Carousels Data',
+                'isi'               => 'pages/users_pages/data_manages/v_plugins_data',
+                'carousel_data'     => $this->caroumod->getDetails(),
+                'breadcrumbs'       => $this->breadcrumbs->buildAuto()
+            ];
+        } else {     //IF RESP == NULL THEN 
+            return redirect()->to(base_url('/admin/carousels-data'));
+        }
 
         return view('layouts/users_layouts/v_wrapper', $data);
     }
