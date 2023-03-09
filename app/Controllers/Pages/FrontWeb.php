@@ -66,6 +66,8 @@ class FrontWeb extends BaseController
 
         return view('layouts/frontweb_layouts/v_frontweb_wrapper', $data);
     }
+
+
     public function contacts()
     {
         $title = "Contacts";

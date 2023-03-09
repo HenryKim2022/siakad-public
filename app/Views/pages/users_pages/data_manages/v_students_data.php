@@ -115,7 +115,7 @@
                                <div class="input-group-prepend">
                                    <span class="input-group-text fas fa-map-marker-edit fa-lg"></span>
                                </div>
-                               <input name="add_birth_loc" type="text" class="form-control col-sm" placeholder="Birth Location">
+                               <input name="add_birth_loc" id="add_birth_loc" type="text" class="form-control col-sm" placeholder="Birth Location">
                            </div>
                            <div class="form-group">
                                <div class="input-group mb-3">

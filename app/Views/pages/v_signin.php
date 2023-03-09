@@ -44,9 +44,30 @@
             text-align: center;
         }
 
+
         /*  */
         /*  */
         /* Change Autocomplete styles in Chrome*/
+        /* Dark Mode */
+        .dark-mode input:-webkit-autofill,
+        .dark-mode input:-webkit-autofill:hover,
+        .dark-mode input:-webkit-autofill:focus,
+        .dark-mode textarea:-webkit-autofill,
+        .dark-mode textarea:-webkit-autofill:hover,
+        .dark-mode textarea:-webkit-autofill:focus,
+        .dark-mode select:-webkit-autofill,
+        .dark-mode select:-webkit-autofill:hover,
+        .dark-mode select:-webkit-autofill:focus,
+        .dark-mode input:-internal-autofill-selected {
+            border: 1px solid inherit;
+            /* -webkit-text-fill-color: #000; */
+            background: inherit !important;
+            -webkit-box-shadow: inset 0 0 0 1px var(--dark), inset 0 0 0 100px var(--dark);
+            box-shadow: inset 0 0 0 1px var(--dark), inset 0 0 0 100px var(--dark);
+            transition: background-color 5000s ease-in-out 0s !important;
+        }
+
+        /* Normal Mode */
         input:-webkit-autofill,
         input:-webkit-autofill:hover,
         input:-webkit-autofill:focus,
@@ -55,16 +76,25 @@
         textarea:-webkit-autofill:focus,
         select:-webkit-autofill,
         select:-webkit-autofill:hover,
-        select:-webkit-autofill:focus {
-            border: 1px solid #17a2b8;
-            -webkit-text-fill-color: green;
-            -webkit-box-shadow: 0 0 0px 1000px inherit inset;
-            transition: background-color 5000s ease-in-out 0s;
+        select:-webkit-autofill:focus,
+        input:-internal-autofill-selected {
+            border: 1px solid inherit;
+            -webkit-text-fill-color: #000;
+            background: inherit !important;
+            -webkit-box-shadow: inset 0 0 0 1px var(--light), inset 0 0 0 100px var(--light);
+            box-shadow: inset 0 0 0 1px var(--light), inset 0 0 0 100px var(--light);
+            transition: background-color 5000s ease-in-out 0s !important;
         }
 
 
+
+
         /*  */
         /*  */
+
+        /* .brand-text:hover {
+            color: inherit !important;
+        } */
     </style>
 </head>
 
@@ -81,7 +111,7 @@
                             <img class="float-right" src="<?= base_url() ?>/Logo.png" alt="AdminLTE Logo" class="brand-image" style="opacity: .8; height: 48px; width: 48px;">
                         </div>
                         <div class="col-sm mt-auto mb-auto">
-                            <a href="<?= base_url() ?>" class="brand-link float-left">
+                            <a href="<?= base_url() ?>" class="navbar-brand float-left">
                                 <span class="brand-text font-weight-light h1">
                                     <b>SIAKAD</b> Campus
                                 </span>
