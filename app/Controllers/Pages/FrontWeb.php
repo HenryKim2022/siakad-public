@@ -40,7 +40,11 @@ class FrontWeb extends BaseController
                 'breadcrumbs'   => $this->breadcrumbs->buildAuto()
             ];
         } else {      //IF RESP == NULL
-            return redirect()->to(base_url(''));
+            if (!empty($this->session->get('log'))) {
+                return redirect()->to(base_url('news'));
+            } else {
+                return redirect()->to(base_url(''));
+            }
         }
 
         return view('layouts/frontweb_layouts/v_frontweb_wrapper', $data);

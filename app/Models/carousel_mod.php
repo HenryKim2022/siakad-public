@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
-use CodeIgniter\Database\RawSql;
 
 class carousel_mod extends Model
 {
