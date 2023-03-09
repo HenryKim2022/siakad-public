@@ -85,19 +85,19 @@
                      </a>
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="./index.html" class="nav-link">
+                             <a href="<?= base_url('adminLTE/index1.html') ?>" class="nav-link" target="_blank">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Dashboard v1</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="./index2.html" class="nav-link active">
+                             <a href="<?= base_url('adminLTE/index2.html') ?>" class="nav-link active" target="_blank">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Dashboard v2</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="./index3.html" class="nav-link">
+                             <a href="<?= base_url('adminLTE/index3.html') ?>" class="nav-link" target="_blank">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Dashboard v3</p>
                              </a>

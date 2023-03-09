@@ -26,7 +26,7 @@ class FrontWeb extends BaseController
     {
         if (!empty($this->session->get('log'))) {
             $title = "News";
-            $static_url = '<?= base_url() ?>';
+            $static_url = base_url('news');
         } else {
             $title = "Front Page";
             $static_url = base_url('');

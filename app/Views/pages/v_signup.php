@@ -120,7 +120,7 @@
                             <img class="float-right" src="<?= base_url() ?>/Logo.png" alt="AdminLTE Logo" class="brand-image" style="opacity: .8; height: 48px; width: 48px;">
                         </div>
                         <div class="col-sm mt-auto mb-auto">
-                            <a href="<?= base_url() ?>" class="navbar-brand float-left">
+                            <a href="<?= base_url() ?>" class="navbar-brand float-left active">
                                 <span class="brand-text font-weight-light h1">
                                     <b>SIAKAD</b> Campus
                                 </span>

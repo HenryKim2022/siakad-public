@@ -32,6 +32,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
 
+    <!-- Gmaps Sidebar -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key='AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk'&callback=gmNoop"></script> -->
+
+    <!-- <script defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&libraries=places&callback=initMap"></script> -->
+
+
     <style>
         /*  */
         /*  */

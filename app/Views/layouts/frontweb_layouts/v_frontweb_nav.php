@@ -3,7 +3,7 @@
     <!-- <div class="container ml-40 mr-40"> -->
     <div class="container mr-50">
         <!-- Left navbar links -->
-        <a class="navbar-brand">
+        <a class="navbar-brand" href="<?= session()->getFlashdata('static_url') ?>">
             <img src="<?= base_url('logo.png') ?>" alt="Siakad Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">SIAKAD Campus</span>
         </a>

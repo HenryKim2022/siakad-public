@@ -14,13 +14,18 @@ class Auth extends BaseController
         helper(['form']);
         $this->session = \Config\Services::session();
 
-        $db = db_connect();
-        $this->authmod = new auth_mod($db);
+        // $db = db_connect();
+        // $this->authmod = new auth_mod($db);
+        $this->authmod = new auth_mod();
     }
 
 
     public function signup()
     {
+        if (!$this->authmod->checkTB() == null) {
+            return redirect()->to(base_url('auth/signup'));
+        }
+
         $pagedata = [
             'title'         => 'User Registration',
             'static_url'    => '<?= "auth/signup" ?>'
@@ -102,6 +107,11 @@ class Auth extends BaseController
 
     public function signin()
     {
+
+        if (!$this->authmod->checkTB() == null) {
+            return redirect()->to(base_url('auth/signin'));
+        }
+
         $pagedata = [
             'title' => 'User Login',
             'static_url' => '<?= "auth/signin" ?>'

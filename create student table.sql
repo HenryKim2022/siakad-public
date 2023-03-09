@@ -22,7 +22,7 @@ INSERT INTO siakad.user_auth VALUE(
     "admin", 
     "Admin", 
     "SIAKAD", 
-    "082281190072", 
+    "082200000000", 
     "admin@support.com", 
     "admin", 
     "1",

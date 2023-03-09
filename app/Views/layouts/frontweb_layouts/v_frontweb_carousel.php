@@ -1,4 +1,4 @@
-   <div class="card">
+   <div class="card card-primary card-outline">
        <div class="card-body">
            <?php if ($carousel_data) { ?>
                <div id="carouselid" class="carousel slide" data-ride="carousel" data-interval="4000">
