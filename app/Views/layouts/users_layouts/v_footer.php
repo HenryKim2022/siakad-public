@@ -302,6 +302,16 @@
 </script>
 
 
+<!-- sidbar badge dynamic count -->
+<script>
+    $(function() {
+        var badge = $(".ctrdm");
+        var count = $(".dmasternav").find(".dmi").length;
+        badge.text(count);
+    });
+</script>
+
+
 <!-- /Select Active Tab - Student's Settings -->
 <?php
 $settTab = session()->getFlashdata('currTab');

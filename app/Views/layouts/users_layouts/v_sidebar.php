@@ -133,35 +133,35 @@
                              </li>
                          </ul>
                      </li>
-                     <li class="nav-item">
+                     <li class="nav-item dmasternav">
                          <a href="#" class="nav-link">
                              <i class="nav-icon fad fa-database"></i>
-                             <p>
+                             <p class="nav-body">
                                  Data Master
                                  <i class="fas fa-angle-left right"></i>
-                                 <span class="badge badge-info right">4</span>
+                                 <span class="badge badge-info right ctrdm">0</span>
                              </p>
                          </a>
                          <ul class="nav nav-treeview">
-                             <li class="nav-item">
+                             <li class="nav-item dmi">
                                  <a href="<?= base_url('/admin/moderators-data') ?>" class="nav-link">
                                      <i class="far fa-circle nav-icon"></i>
                                      <p>Moderators Data</p>
                                  </a>
                              </li>
-                             <li class="nav-item">
+                             <li class="nav-item dmi">
                                  <a href="<?= base_url('/admin/teachers-data') ?>" class="nav-link">
                                      <i class="far fa-circle nav-icon"></i>
                                      <p>Teachers Data</p>
                                  </a>
                              </li>
-                             <li class="nav-item">
+                             <li class="nav-item dmi">
                                  <a href="<?= base_url('/admin/students-data') ?>" class="nav-link">
                                      <i class="far fa-circle nav-icon"></i>
                                      <p>Students Data</p>
                                  </a>
                              </li>
-                             <li class="nav-item">
+                             <li class="nav-item dmi">
                                  <a href="<?= base_url('/admin/guests-data') ?>" class="nav-link">
                                      <i class="far fa-circle nav-icon"></i>
                                      <p>Guests Data</p>

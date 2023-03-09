@@ -5,6 +5,8 @@ namespace App\Controllers\Pages;
 use App\Controllers\BaseController;
 use App\Modules\Breadcrumbs\Breadcrumbs;
 use App\Models\carousel_mod;
+use App\Models\check_db_mod;
+
 
 class FrontWeb extends BaseController
 {
@@ -39,6 +41,9 @@ class FrontWeb extends BaseController
                 'carousel_data' => $this->caroumod->getDetails(),
                 'breadcrumbs'   => $this->breadcrumbs->buildAuto()
             ];
+            $this->session->setFlashdata($data);
+
+            // 
         } else {      //IF RESP == NULL
             if (!empty($this->session->get('log'))) {
                 return redirect()->to(base_url('news'));

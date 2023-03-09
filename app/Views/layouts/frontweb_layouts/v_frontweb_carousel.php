@@ -1,7 +1,8 @@
    <div class="card">
        <div class="card-body">
            <?php if ($carousel_data) { ?>
-               <div id="carouselid" class="carousel slide" data-ride="carousel" data-interval="3000">
+               <div id="carouselid" class="carousel slide" data-ride="carousel" data-interval="4000">
+                   <!-- data-interval="3000" -->
                    <ol class="carousel-indicators">
                        <?php {
                             $i = 0;
@@ -113,6 +114,8 @@
                </div>
 
            <?php } ?>
+
+
        </div>
        <!--  -->
        <!--  -->
