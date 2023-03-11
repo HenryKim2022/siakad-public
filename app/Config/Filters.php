@@ -55,6 +55,7 @@ class Filters extends BaseConfig
                     'web', 'web/*',
                     'auth', 'auth/*',
                     'help', 'help/*',
+                    'test', 'test/*',
                     '/',
                 ]
             ],
@@ -67,6 +68,7 @@ class Filters extends BaseConfig
                     'auth', 'auth/*',
                     'auth/signup', 'auth/signup/*',
                     'help', 'help/*',
+                    'test', 'test/*',
                     '/',
                 ]
             ],
@@ -79,6 +81,7 @@ class Filters extends BaseConfig
                     'auth', 'auth/*',
                     'auth/signup', 'auth/signup/*',
                     'help', 'help/*',
+                    'test', 'test/*',
                     '/',
                 ]
             ],
@@ -91,6 +94,7 @@ class Filters extends BaseConfig
                     'auth', 'auth/*',
                     'auth/signup', 'auth/signup/*',
                     'help', 'help/*',
+                    'test', 'test/*',
                     '/',
                 ]
             ],
@@ -103,6 +107,7 @@ class Filters extends BaseConfig
                     'auth', 'auth/*',
                     'auth/signup', 'auth/signup/*',
                     'help', 'help/*',
+                    'test', 'test/*',
                     '/',
                 ]
             ],
@@ -115,6 +120,7 @@ class Filters extends BaseConfig
                     'auth', 'auth/*',
                     'auth/signup', 'auth/signup/*',
                     'help', 'help/*',
+                    'test', 'test/*',
                     '/',
                 ]
             ],

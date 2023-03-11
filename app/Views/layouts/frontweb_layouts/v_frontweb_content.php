@@ -6,7 +6,7 @@
     </div>
 
 
-    <div class="col-lg-8">
+    <div class="col-lg-8 min-h-50vh">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Card title: Main 1</h5>
@@ -39,42 +39,40 @@
     </div>
 
 
+
     <!-- /.col-md-6 -->
-    <div class="col-sm-4">
-        <div class="card collapsed-card">
+    <div class="col-sm-4 min-h-25vh">
+        <div class="card">
             <div class="card-header">
-                <h5 class="card-title m-0">Countdown</h5>
+                <h5 class="card-title cd-card-title m-0"><i class="fas fa-clock fas-beat-fade mr-2"></i>Countdown <strong>Campus</strong></h5>
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                        <i class="fas fa-minus"></i>
+                        <i class="fas fa-plus"></i>
                     </button>
                 </div>
             </div>
-            <div class="card-body">
-                <h6 class="card-title">Special title treatment</h6>
-
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="card-body text-primary">
+                <?= view('layouts/plugins/v_countdown') ?>
             </div>
         </div>
 
-        <!-- PRODUCT LIST -->
-        <div class="card collapsed-card">
+        <!-- ARTICLE LIST -->
+        <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Recently Added News</h3>
+                <h3 class="card-title">Recently Added Articles</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                        <i class="fas fa-minus"></i>
+                        <i class="fas fa-plus"></i>
                     </button>
                 </div>
             </div>
             <!-- /.card-header -->
-            <div class="card-body p-0">
-                <ul class="products-list product-list-in-card pl-2 pr-2">
+            <div class="card-body p-0 no-wrap" style="height: 35vh; overflow-y: auto">
+                <ul class="products-list product-list-in-card pl-2 pr-2 list-group-small">
                     <li class="item">
                         <div class="product-img">
-                            <img src="adminLTE/dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                            <img src="adminLTE/dist/img/default-150x150.png" alt="Article Img" class="img-size-50">
                         </div>
                         <div class="product-info">
                             <a href="javascript:void(0)" class="product-title">Samsung TV
@@ -87,7 +85,7 @@
                     <!-- /.item -->
                     <li class="item">
                         <div class="product-img">
-                            <img src="adminLTE/dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                            <img src="adminLTE/dist/img/default-150x150.png" alt="Article Img" class="img-size-50">
                         </div>
                         <div class="product-info">
                             <a href="javascript:void(0)" class="product-title">PlayStation 4
@@ -98,18 +96,81 @@
                         </div>
                     </li>
                     <!-- /.item -->
+                    <li class="item">
+                        <div class="product-img">
+                            <img src="adminLTE/dist/img/default-150x150.png" alt="Article Img" class="img-size-50">
+                        </div>
+                        <div class="product-info">
+                            <a href="javascript:void(0)" class="product-title">PlayStation 4
+                                <span class="badge badge-success float-right">$399</span></a>
+                            <span class="product-description">
+                                PlayStation 4 500GB Console (PS4)
+                            </span>
+                        </div>
+                    </li>
+                    <!-- /.item -->
+                    <div class="collapse products-list product-list-in-card" id="moreArticles">
+                        <h6 class="bg-light p-2 border-top border-bottom mb-0">More articles</h6>
+                        <li class="item">
+                            <div class="product-img">
+                                <img src="adminLTE/dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                            </div>
+                            <div class="product-info">
+                                <a href="javascript:void(0)" class="product-title">Samsung TV
+                                    <span class="badge badge-warning float-right">$1800</span></a>
+                                <span class="product-description">
+                                    Samsung 32" 1080p 60Hz LED Smart HDTV.
+                                </span>
+                            </div>
+                        </li>
+                        <!-- /.item -->
+                        <li class="item">
+                            <div class="product-img">
+                                <img src="adminLTE/dist/img/default-150x150.png" alt="Article Img" class="img-size-50">
+                            </div>
+                            <div class="product-info">
+                                <a href="javascript:void(0)" class="product-title">PlayStation 99
+                                    <span class="badge badge-success float-right">$399</span></a>
+                                <span class="product-description">
+                                    PlayStation 9 500GB Console (PS4)
+                                </span>
+                            </div>
+                        </li>
+                        <!-- /.item -->
+                        <li class="item">
+                            <div class="product-img">
+                                <img src="adminLTE/dist/img/default-150x150.png" alt="Article Img" class="img-size-50">
+                            </div>
+                            <div class="product-info">
+                                <a href="javascript:void(0)" class="product-title">PlayStation 40
+                                    <span class="badge badge-success float-right">$399</span></a>
+                                <span class="product-description">
+                                    PlayStation 40 500GB Console (PS4)
+                                </span>
+                            </div>
+                        </li>
+                        <!-- /.item -->
+
+
+                        <!-- <span id="dots">...</span><span id="more"> -->
+                        <!-- </span> -->
+                    </div>
+
+
+
+                    <!-- More -->
                 </ul>
             </div>
             <!-- /.card-body -->
             <div class="card-footer text-center">
-                <a href="javascript:void(0)" class="uppercase">View All News</a>
+                <a href="javascript:void(0)" class="uppercase" data-toggle="collapse" data-target="#moreArticles" aria-expanded="false" aria-controls="moreArticles">View More</a>
             </div>
             <!-- /.card-footer -->
         </div>
         <!-- /.card -->
 
 
-        <div class="card card-primary card-outline">
+        <div class="card card-primary card-outline collapsed-card">
             <div class="card-header">
                 <h5 class="card-title m-0"><i class="fas fa-map-marker-alt mr-2" data-toggle="modal" data-target="#modal-add-std-data"></i>Campus Location</h5>
 
@@ -118,20 +179,27 @@
                         <i class="fad fa-globe-asia"></i>
                     </button>
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                        <i class="fas fa-minus"></i>
+                        <i class="fas fa-plus"></i>
                     </button>
                 </div>
             </div>
             <div class="card-body card-body-cascade text-center p-1">
                 <!--Google map-->
-                <div id="map-container-google-7" class="z-depth-1-half map-container-5 w-100" style="height: 300px">
-                    <iframe class="w-100 h-100" src="https://maps.google.com/maps?q=InstitutTeknologiIndonesia&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" style="border:0" allowfullscreen="true"></iframe>
+                <div id="map-container-google-7" class="z-depth-1-half map-container-5">
+                    <iframe class="w-100 min-vh-25" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.3880557741604!2d106.67352851413878!3d-6.343763863830325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e5ab3d01e03b%3A0xb98f4c27e24202ec!2sInstitut%20Teknologi%20Indonesia%20(ITI)!5e0!3m2!1sen!2sid!4v1678435459490!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
+
+            <script>
+
+            </script>
         </div>
 
     </div>
     <!-- /.col-md-6 -->
+
+
+
 
     <div class="col-lg-12">
         <div class="card">
@@ -162,44 +230,6 @@
 </div>
 
 
-<!-- Modal add student -->
-<div class="modal fade modal-xl" id="modal-add-std-dataxxx">
-    <div class="modal-dialog">
-        <div class="modal-content bg-secondary">
-            <div class="modal-header pt-2 pb-2">
-                <h4 class="modal-title">Add Student Data</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!--Google map-->
-                <div id="map-container-google-7" class="z-depth-1-half map-container-5" style="height: 65vh; width:auto;">
-                    <iframe class="w-100 h-100" src="https://maps.google.com/maps?q=InstitutTeknologiIndonesia&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" style="border:0" allowfullscreen="true"></iframe>
-                </div>
-
-                <!--Google map-->
-                <!-- <div id="map-container-google-13" class="z-depth-1-half map-container-7" style="height: 400px">
-                    <iframe src="https://maps.google.com/maps?q=Intitut%20Teknologi%20Indonesia&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" style="border:0" allowfullscreen=""></iframe>
-                </div> -->
-
-            </div>
-            <!-- <div class="modal-footer justify-content-center">
-                <button type="button" class="btn btn-info btn-md waves-effect waves-light">Save location <i class="fas fa-map-marker-alt ml-1"></i></button>
-                <button type="button" class="btn btn-outline-info btn-md waves-effect waves-light" data-dismiss="modal">Close <i class="fas fa-times ml-1"></i></button>
-            </div> -->
-            <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
-                <button id="AddStudentBtn" type="submit" class="btn btn-outline-light" style="display: none">Save changes</button>
-            </div>
-
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
-
 
 
 <!-- Modal -->
@@ -215,7 +245,7 @@
             <div class="modal-body">
                 <!--Google map-->
                 <div id="map-container-google-7" class="z-depth-1-half map-container-5" style="height: 65vh; width:auto;">
-                    <iframe class="w-100 h-100" src="https://maps.google.com/maps?q=InstitutTeknologiIndonesia&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" style="border:0" allowfullscreen="true"></iframe>
+                    <iframe class="w-100 h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.3880557741604!2d106.67352851413878!3d-6.343763863830325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e5ab3d01e03b%3A0xb98f4c27e24202ec!2sInstitut%20Teknologi%20Indonesia%20(ITI)!5e0!3m2!1sen!2sid!4v1678435459490!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
             <div class="modal-footer">

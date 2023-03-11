@@ -35,8 +35,6 @@
     <!-- Gmaps Sidebar -->
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key='AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk'&callback=gmNoop"></script> -->
 
-    <!-- <script defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&libraries=places&callback=initMap"></script> -->
-
 
     <style>
         /*  */
@@ -451,6 +449,7 @@
 
 
         /*  */
+        /*  */
         /* Carousel Style */
         .carousel-indicators {
             bottom: 0;
@@ -492,8 +491,6 @@
             margin-top: 1em;
         }
 
-
-
         /* Animation delays */
         .carousel-caption h3:first-child {
             animation-delay: 1s;
@@ -519,11 +516,33 @@
         }
 
 
-        /* .Carousel Style */
+
+        /*  */
+        /*  */
+        /* Text Limiter */
+        #more {
+            display: none;
+        }
 
 
         /*  */
         /*  */
+        /* CD Card Title */
+        .cd-card-title {
+            /* margin-bottom: 60px; */
+            text-align: center;
+            /* font: 300 1.1rem "Lato"; */
+            text-transform: uppercase;
+        }
+
+        .cd-card-title strong {
+            font-weight: 400;
+            color: #ea4c4c;
+        }
+
+        .count-title {
+            color: inherit;
+        }
     </style>
 
 

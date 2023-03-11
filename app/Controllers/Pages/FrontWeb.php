@@ -155,4 +155,21 @@ class FrontWeb extends BaseController
 
         return view('layouts/frontweb_layouts/v_frontweb_wrapper', $data);
     }
+
+
+    public function test()
+    {
+        $title = "Test";
+        $static_url = base_url('test');
+
+        $data = [
+            'sitename'      => 'SIAKAD Campus',
+            'title'         => $title,
+            'static_url'    => $static_url,
+            'isi'           => 'pages/frontweb_pages/test',
+            'breadcrumbs'   => $this->breadcrumbs->buildAuto()
+        ];
+
+        return view('layouts/frontweb_layouts/v_frontweb_wrapper', $data);
+    }
 }
