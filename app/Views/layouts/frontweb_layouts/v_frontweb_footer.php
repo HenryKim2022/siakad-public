@@ -74,6 +74,26 @@
 <!-- AdminLTE App -->
 <script src="<?= base_url() ?>/adminLTE/dist/js/adminlte.js"></script>
 
+
+
+
+<!-- <script src="?= base_url() ?>adminLTE/custom-plugins/responsive-flip-countdown/jquery.slim.min.js"></script> -->
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+<!-- <script src="jquery.flipper-responsive.js"></script> -->
+<script src="<?= base_url() ?>/adminLTE/custom-plugins/rpfl_v1/jquery.flipper-responsive.js"></script>
+<script>
+    jQuery(function($) {
+        $('#myFlipper').flipper('init');
+        $('#modalFlipper').flipper('init');
+    });
+</script>
+
+
+
+
+
 <!-- Page specific script -->
 <script>
     $(function() {
@@ -102,6 +122,8 @@
     var currentTheme = localStorage.getItem('theme');
     var mainHeader = document.querySelector('.main-header');
     var inputFields = document.querySelector('input');
+    // var flipperFields = document.querySelector('myFlipper');
+    var flipperFields = document.getElementById("myFlipper");
 
     if (currentTheme) {
         if (currentTheme === 'dark') {
@@ -116,6 +138,16 @@
                 inputFields.classList.add('navbar-dark');
                 inputFields.classList.remove('navbar-light');
             }
+
+            if (flipperFields.classList.contains('flipper-light')) {
+                flipperFields.classList.add('flipper-dark');
+                flipperFields.classList.remove('flipper-light');
+            }
+            if (flipperFields.classList.contains('flipper-light-labels')) {
+                flipperFields.classList.add('flipper-dark-labels');
+                flipperFields.classList.remove('flipper-light-labels');
+            }
+
             toggleSwitch.checked = true;
 
 
@@ -136,6 +168,18 @@
             if (myspan.textContent) {
                 myspan.textContent = "Light Mode";
             }
+
+
+            if (flipperFields.classList.contains('flipper-dark')) {
+                flipperFields.classList.add('flipper-light');
+                flipperFields.classList.remove('flipper-dark');
+            }
+            if (flipperFields.classList.contains('flipper-dark-labels')) {
+                flipperFields.classList.add('flipper-light-labels');
+                flipperFields.classList.remove('flipper-dark-labels');
+            }
+
+
         }
 
     }
@@ -152,6 +196,15 @@
             if (inputFields.classList.contains('navbar-light')) {
                 inputFields.classList.add('navbar-dark');
                 inputFields.classList.remove('navbar-light');
+            }
+
+            if (flipperFields.classList.contains('flipper-light')) {
+                flipperFields.classList.add('flipper-dark');
+                flipperFields.classList.remove('flipper-light');
+            }
+            if (flipperFields.classList.contains('flipper-light-labels')) {
+                flipperFields.classList.add('flipper-dark-labels');
+                flipperFields.classList.remove('flipper-light-labels');
             }
 
             localStorage.setItem('theme', 'dark');
@@ -175,6 +228,16 @@
                 inputFields.classList.add('navbar-light');
                 inputFields.classList.remove('navbar-dark');
             }
+
+            if (flipperFields.classList.contains('flipper-dark')) {
+                flipperFields.classList.add('flipper-light');
+                flipperFields.classList.remove('flipper-dark');
+            }
+            if (flipperFields.classList.contains('flipper-dark-labels')) {
+                flipperFields.classList.add('flipper-light-labels');
+                flipperFields.classList.remove('flipper-dark-labels');
+            }
+
             localStorage.setItem('theme', 'light');
 
             var myspan = document.getElementById('darklight-mode-lbl');
@@ -234,7 +297,76 @@
 
 
 
+<script>
+    var labels = ['weeks', 'days', 'hours', 'minutes', 'seconds'],
+        TimerCount = (new Date().getFullYear() + 1) + '/01/01',
+        template = _.template(jQuery('#main-example-template').html()),
+        currDate = '00:00:00:00:00',
+        nextDate = '00:00:00:00:00',
+        parser = /([0-9]{2})/gi,
+        $example = jQuery('#main-example');
 
+    if ($example.data("timer").length) {
+        TimerCount = $example.data("timer");
+    }
+
+    // Parse countdown string to an object
+    function strfobj(str) {
+        var parsed = str.match(parser),
+            obj = {};
+        labels.forEach(function(label, i) {
+            obj[label] = parsed[i]
+        });
+        return obj;
+    }
+    // Return the time components that diffs
+    function diff(obj1, obj2) {
+        var diff = [];
+        labels.forEach(function(key) {
+            if (obj1[key] !== obj2[key]) {
+                diff.push(key);
+            }
+        });
+        return diff;
+    }
+    // Build the layout
+    var initData = strfobj(currDate);
+    labels.forEach(function(label, i) {
+        $example.append(template({
+            curr: initData[label],
+            next: initData[label],
+            label: label
+        }));
+    });
+    // Starts the countdown
+    $example.countdown(TimerCount, function(event) {
+        var newDate = event.strftime('%w:%d:%H:%M:%S'),
+            data;
+
+        if (newDate !== nextDate) {
+            currDate = nextDate;
+            nextDate = newDate;
+            // Setup the data
+            data = {
+                'curr': strfobj(currDate),
+                'next': strfobj(nextDate)
+            };
+            // Apply the new values to each node that changed
+            diff(data.curr, data.next).forEach(function(label) {
+                var selector = '.%s'.replace(/%s/, label),
+                    $node = $example.find(selector);
+                // Update the node
+                $node.removeClass('flip');
+                $node.find('.curr').text(data.curr[label]);
+                $node.find('.next').text(data.next[label]);
+                // Wait for a repaint to then flip
+                $example.delay(function($node) {
+                    $node.addClass('flip');
+                }, 50, $node);
+            });
+        }
+    });
+</script>
 
 
 

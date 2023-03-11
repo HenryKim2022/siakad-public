@@ -43,7 +43,7 @@
     <!-- /.col-md-6 -->
     <div class="col-sm-4 min-h-25vh">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header" data-card-widget="collapse">
                 <h5 class="card-title cd-card-title m-0"><i class="fas fa-clock fas-beat-fade mr-2"></i>Countdown <strong>Campus</strong></h5>
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -51,14 +51,21 @@
                     </button>
                 </div>
             </div>
-            <div class="card-body text-primary">
-                <?= view('layouts/plugins/v_countdown') ?>
+            <div class="card-body text-primary justify-content-center align-items-center m-auto">
+                <?= view('layouts/plugins/v_countdown_v2') ?>
+
+
+                <div class="text-center justify-content-center align-items-center">
+                    <h6 class="bg-light p-2 border-top border-bottom mt-3 mb-2">Cd title</h6>
+                    <a href="">This is countdown descriptions</a>
+                </div>
+                
             </div>
         </div>
 
         <!-- ARTICLE LIST -->
         <div class="card">
-            <div class="card-header">
+            <div class="card-header" data-card-widget="collapse">
                 <h3 class="card-title">Recently Added Articles</h3>
 
                 <div class="card-tools">
@@ -171,7 +178,7 @@
 
 
         <div class="card card-primary card-outline collapsed-card">
-            <div class="card-header">
+            <div class="card-header" data-card-widget="collapse">
                 <h5 class="card-title m-0"><i class="fas fa-map-marker-alt mr-2" data-toggle="modal" data-target="#modal-add-std-data"></i>Campus Location</h5>
 
                 <div class="card-tools">
