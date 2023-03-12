@@ -4,7 +4,7 @@ USE siakad;
 
 
 -- USER SIGNUP/SIGNIN
-CREATE TABLE IF NOT EXISTS siakad.user_auth(
+CREATE TABLE IF NOT EXISTS user_auth(
     username varchar(25) NOT NULL PRIMARY KEY,
     first_na varchar(25) NOT NULL,
     last_na varchar(30) NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS siakad.user_auth(
     updated_at timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
 
-INSERT INTO siakad.user_auth VALUE(
+INSERT INTO user_auth VALUE(
     "admin", 
     "Admin", 
     "SIAKAD", 
@@ -34,7 +34,7 @@ INSERT INTO siakad.user_auth VALUE(
 
 
 -- USER STUDENT DATA
-CREATE TABLE IF NOT EXISTS siakad.students_data (
+CREATE TABLE IF NOT EXISTS students_data (
 	nim varchar(18) NOT NULL PRIMARY KEY,
 	first_na varchar(25) NOT NULL,
 	last_na varchar(30) NOT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS siakad.students_data (
 
 
 -- APPEND STUDENT DATA by ADMIN
-INSERT INTO siakad.students_data VALUES
+INSERT INTO students_data VALUES
     ("1152125001","Henry","Kim","Male","Earth","1998-8-8","Mt. Dores","henryk@example.com",
     "+6282200000000","Dad","Heavens", "+6282200000000","Mom","General Soed","+6282200000000","","",""),
     ("1152125002","Mr. Admin","Kim","Male","Earth","1998-8-26","Mt. Dores","henryk@example.com",

@@ -51,16 +51,26 @@
                     </button>
                 </div>
             </div>
-            <div class="card-body text-primary justify-content-center align-items-center m-auto">
+            <!-- <div class="card-body text-primary justify-content-center align-items-center m-auto">
+                ?= view('layouts/plugins/v_countdown_v2') ?>
+            </div> -->
+
+
+            <style>
+
+            </style>
+
+
+            <div class="card-body p-0 no-wrap justify-content-center align-items-center m-auto" style="height: 25vh; overflow-y: auto">
                 <?= view('layouts/plugins/v_countdown_v2') ?>
-
-
-                <div class="text-center justify-content-center align-items-center">
-                    <h6 class="bg-light p-2 border-top border-bottom mt-3 mb-2">Cd title</h6>
-                    <a href="">This is countdown descriptions</a>
-                </div>
-                
             </div>
+            <!-- /.CardBody -->
+
+            <div class="card-footer text-center">
+                <a href="javascript:void(0)" class="uppercase" data-toggle="collapse" data-target="#moreCountdowns" aria-expanded="false" aria-controls="moreCountdowns">View More</a>
+            </div>
+            <!-- /.card-footer -->
+
         </div>
 
         <!-- ARTICLE LIST -->
@@ -183,17 +193,17 @@
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-toggle="modal" data-target="#modal-add-std-data">
-                        <i class="fad fa-globe-asia"></i>
+                        <i class="fad fa-window"></i>
                     </button>
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                         <i class="fas fa-plus"></i>
                     </button>
                 </div>
             </div>
-            <div class="card-body card-body-cascade text-center p-1">
+            <div class="card-body card-body-cascade text-center p-1" style="height: fit-contents;">
                 <!--Google map-->
                 <div id="map-container-google-7" class="z-depth-1-half map-container-5">
-                    <iframe class="w-100 min-vh-25" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.3880557741604!2d106.67352851413878!3d-6.343763863830325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e5ab3d01e03b%3A0xb98f4c27e24202ec!2sInstitut%20Teknologi%20Indonesia%20(ITI)!5e0!3m2!1sen!2sid!4v1678435459490!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe class="w-100 h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.3880557741604!2d106.67352851413878!3d-6.343763863830325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e5ab3d01e03b%3A0xb98f4c27e24202ec!2sInstitut%20Teknologi%20Indonesia%20(ITI)!5e0!3m2!1sen!2sid!4v1678435459490!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
@@ -244,7 +254,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel"><i class="fas fa-map-marker-alt mr-2"></i>Campus Location</h5>
+                <h5 class="modal-title" id="staticBackdropLabel"><i class="fas fa-map-marker-alt mr-2"></i>Institution Location</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

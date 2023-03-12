@@ -215,12 +215,12 @@ jQuery(function($){
     function upsizeToParent($flipper) {
       var parentWidth;
       var flipperWidth;
-      var maxFontSize = 1000;
+      var maxFontSize = 43;
       var fontSize = maxFontSize;
       var i = 0;
-      var minFontSize = 30;
+      var minFontSize = 0;
       $flipper.css('font-size', fontSize + 'px');
-      while(i < 40){
+      while(i < 32){
         i++;
         parentWidth = $flipper.innerWidth();
         $flipper.css('width', '9999px');

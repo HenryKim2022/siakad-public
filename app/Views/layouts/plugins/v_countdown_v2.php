@@ -322,11 +322,97 @@
     .flipper-dark-labels .flipper-group label {
         color: #fff;
     }
+
+
+    /*  */
+    /*  */
+    /* Countdown HTML Style */
+    .dark-mode .cd-description {
+        color: #ced4da;
+    }
+
+    /* .cd-list .cd-description { */
+    .cd-list .cd-description {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        /* number of lines to show */
+        line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+
+
+    .dark-mode .cd-list>.item {
+        background-color: #343a40;
+        color: #fff;
+        border-bottom-color: #6c757d;
+    }
+
+
+    .cd-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 </style>
 
 
+<ul class="cd-list cd-list-in-card pl-2 pr-2 list-group-small">
+    <?php $cd_c = 0 ?>
+    <li class="item">
+        <div class="cd-title mt-2 mb-2">
+            <a href="javascript:void(0)" class="">
+                <h6 class="bg-light p-2 border-top border-bottom mb-0">
+                    Countdown Title 1
+                    <span class="badge badge-warning badge-secondary float-right">1</span>
+                </h6>
+            </a>
+        </div>
+        <div class="cd-timer justify-content-center align-items-center m-auto">
+            <div class="container mr-0 pr-0">
+                <div class="flipper flipper-dark flipper-dark-labels" data-reverse="true" data-datetime="2024-03-13 00:00:00" data-template="ddd|HH|ii|ss" data-labels="Days|Hours|Minutes|Seconds" id="myFlipper"></div>
+                <!-- <div class="flipper flipper-dark flipper-dark-labels" data-reverse="false" data-datetime="2025-03-14 00:00:00" data-template="d|HH|i|s" data-labels="Date|Hours|Minutes|Seconds" id="modalFlipper"></div> -->
+            </div>
+        </div>
+        <div class="cd-description text-left border-top mt-2 mb-8 pl-2 pr-2">
+            This is Countdown descriptions, set it trough admin account
+        </div>
+    </li>
 
-<div class="container">
+    <div class="collapse cd-list cd-list-in-card" id="moreCountdowns">
+        <li class="item">
+            <div class="cd-title mt-2 mb-2">
+                <a href="javascript:void(0)" class="">
+                    <h6 class="bg-light p-2 border-top border-bottom mb-0">
+                        Countdown Title 1
+                        <span class="badge badge-warning badge-secondary float-right">1</span>
+                    </h6>
+                </a>
+            </div>
+            <div class="cd-timer justify-content-center align-items-center m-auto">
+                <div class="container mr-0 pr-0">
+                    <div class="flipper flipper-dark flipper-dark-labels" data-reverse="true" data-datetime="2024-03-13 00:00:00" data-template="ddd|HH|ii|ss" data-labels="Days|Hours|Minutes|Seconds" id="myFlipper"></div>
+                    <!-- <div class="flipper flipper-dark flipper-dark-labels" data-reverse="false" data-datetime="2025-03-14 00:00:00" data-template="d|HH|i|s" data-labels="Date|Hours|Minutes|Seconds" id="modalFlipper"></div> -->
+                </div>
+            </div>
+            <div class="cd-description text-left border-top mt-2 mb-8 pl-2 pr-2">
+                This is Countdown descriptions, set it trough admin account
+            </div>
+        </li>
+
+    </div>
+</ul>
+
+
+<!-- <div class="container">
     <div class="flipper flipper-dark flipper-dark-labels" data-reverse="true" data-datetime="2024-03-13 00:00:00" data-template="ddd|HH|ii|ss" data-labels="Days|Hours|Minutes|Seconds" id="myFlipper"></div>
-    <!-- <div class="flipper flipper-dark flipper-dark-labels" data-reverse="false" data-datetime="2025-03-14 00:00:00" data-template="d|HH|i|s" data-labels="Date|Hours|Minutes|Seconds" id="modalFlipper"></div> -->
+    <div class="flipper flipper-dark flipper-dark-labels" data-reverse="false" data-datetime="2025-03-14 00:00:00" data-template="d|HH|i|s" data-labels="Date|Hours|Minutes|Seconds" id="modalFlipper"></div>
 </div>
+
+<div class="text-center justify-content-center align-items-center">
+    <a href="" class="">
+        <h6 class="font-weight-light bg-inherit text-black text-bold p-2 border-top border-bottom mt-3 mb-2">Cd title</h6>
+    </a>
+    <a class="text-sm">This is countdown descriptions</a>
+</div> -->
