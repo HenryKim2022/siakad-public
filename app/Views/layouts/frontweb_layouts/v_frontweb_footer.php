@@ -83,12 +83,29 @@
 <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
 <!-- <script src="jquery.flipper-responsive.js"></script> -->
 <script src="<?= base_url() ?>/adminLTE/custom-plugins/rpfl_v1/jquery.flipper-responsive.js"></script>
-<script>
-    jQuery(function($) {
-        $('#myFlipper').flipper('init');
-        $('#modalFlipper').flipper('init');
-    });
-</script>
+
+
+
+
+<!-- FrontPage: Countdown Script -->
+<?php
+$cd_datas = session()->getFlashdata('countdown_data');
+if (!empty($cd_datas)) { ?>
+    <?php
+    foreach ($cd_datas as $cdata) :
+        if ($cdata['countdown_status'] == "active" && !$cdata['countdown_alt'] == null) { ?>
+            <script>
+                jQuery(function($) {
+                    $("#<?= esc($cdata['countdown_alt']) ?>").flipper('init');
+                    // $('#modalFlipper').flipper('init');
+                });
+            </script>
+
+        <?php } ?>
+    <?php endforeach; ?>
+
+<?php } ?>
+
 
 
 
@@ -122,8 +139,25 @@
     var currentTheme = localStorage.getItem('theme');
     var mainHeader = document.querySelector('.main-header');
     var inputFields = document.querySelector('input');
-    // var flipperFields = document.querySelector('myFlipper');
-    var flipperFields = document.getElementById("myFlipper");
+
+    // var flipperFields = document.getElementById("myFlipper");
+
+    <?php
+    $cd_datas = session()->getFlashdata('countdown_data');
+    if (!empty($cd_datas)) { ?>
+        <?php
+        foreach ($cd_datas as $cdata) :
+            if ($cdata['countdown_status'] == "active" && !$cdata['countdown_alt'] == null) { ?>
+                var <?= esc('flipperFields' . $cdata['countdown_alt']) ?> = document.getElementById("<?= esc($cdata['countdown_alt']) ?>");
+
+            <?php } ?>
+        <?php endforeach; ?>
+    <?php } ?>
+
+
+
+
+
 
     if (currentTheme) {
         if (currentTheme === 'dark') {
@@ -139,14 +173,25 @@
                 inputFields.classList.remove('navbar-light');
             }
 
-            if (flipperFields.classList.contains('flipper-light')) {
-                flipperFields.classList.add('flipper-dark');
-                flipperFields.classList.remove('flipper-light');
-            }
-            if (flipperFields.classList.contains('flipper-light-labels')) {
-                flipperFields.classList.add('flipper-dark-labels');
-                flipperFields.classList.remove('flipper-light-labels');
-            }
+
+            <?php
+            $cd_datas = session()->getFlashdata('countdown_data');
+            if (!empty($cd_datas)) { ?>
+                <?php
+                foreach ($cd_datas as $cdata) :
+                    if ($cdata['countdown_status'] == "active" && !$cdata['countdown_alt'] == null) { ?>
+                        if (<?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.contains('flipper-light')) {
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.add('flipper-dark');
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.remove('flipper-light');
+                        }
+                        if (<?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.contains('flipper-light-labels')) {
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.add('flipper-dark-labels');
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.remove('flipper-light-labels');
+                        }
+
+                    <?php } ?>
+                <?php endforeach; ?>
+            <?php } ?>
 
             toggleSwitch.checked = true;
 
@@ -170,14 +215,27 @@
             }
 
 
-            if (flipperFields.classList.contains('flipper-dark')) {
-                flipperFields.classList.add('flipper-light');
-                flipperFields.classList.remove('flipper-dark');
-            }
-            if (flipperFields.classList.contains('flipper-dark-labels')) {
-                flipperFields.classList.add('flipper-light-labels');
-                flipperFields.classList.remove('flipper-dark-labels');
-            }
+            <?php
+            $cd_datas = session()->getFlashdata('countdown_data');
+            if (!empty($cd_datas)) { ?>
+                <?php
+                foreach ($cd_datas as $cdata) :
+                    if ($cdata['countdown_status'] == "active" && !$cdata['countdown_alt'] == null) { ?>
+                        if (<?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.contains('flipper-dark')) {
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.add('flipper-light');
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.remove('flipper-dark');
+                        }
+                        if (<?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.contains('flipper-dark-labels')) {
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.add('flipper-light-labels');
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.remove('flipper-dark-labels');
+                        }
+
+
+                    <?php } ?>
+                <?php endforeach; ?>
+            <?php } ?>
+
+
 
 
         }
@@ -198,14 +256,27 @@
                 inputFields.classList.remove('navbar-light');
             }
 
-            if (flipperFields.classList.contains('flipper-light')) {
-                flipperFields.classList.add('flipper-dark');
-                flipperFields.classList.remove('flipper-light');
-            }
-            if (flipperFields.classList.contains('flipper-light-labels')) {
-                flipperFields.classList.add('flipper-dark-labels');
-                flipperFields.classList.remove('flipper-light-labels');
-            }
+
+            <?php
+            $cd_datas = session()->getFlashdata('countdown_data');
+            if (!empty($cd_datas)) { ?>
+                <?php
+                foreach ($cd_datas as $cdata) :
+                    if ($cdata['countdown_status'] == "active" && !$cdata['countdown_alt'] == null) { ?>
+                        if (<?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.contains('flipper-light')) {
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.add('flipper-dark');
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.remove('flipper-light');
+                        }
+                        if (<?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.contains('flipper-light-labels')) {
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.add('flipper-dark-labels');
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.remove('flipper-light-labels');
+                        }
+
+                    <?php } ?>
+                <?php endforeach; ?>
+            <?php } ?>
+
+
 
             localStorage.setItem('theme', 'dark');
 
@@ -229,14 +300,26 @@
                 inputFields.classList.remove('navbar-dark');
             }
 
-            if (flipperFields.classList.contains('flipper-dark')) {
-                flipperFields.classList.add('flipper-light');
-                flipperFields.classList.remove('flipper-dark');
-            }
-            if (flipperFields.classList.contains('flipper-dark-labels')) {
-                flipperFields.classList.add('flipper-light-labels');
-                flipperFields.classList.remove('flipper-dark-labels');
-            }
+
+            <?php
+            $cd_datas = session()->getFlashdata('countdown_data');
+            if (!empty($cd_datas)) { ?>
+                <?php
+                foreach ($cd_datas as $cdata) :
+                    if ($cdata['countdown_status'] == "active" && !$cdata['countdown_alt'] == null) { ?>
+                        if (<?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.contains('flipper-dark')) {
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.add('flipper-light');
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.remove('flipper-dark');
+                        }
+                        if (<?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.contains('flipper-dark-labels')) {
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.add('flipper-light-labels');
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.remove('flipper-dark-labels');
+                        }
+
+                    <?php } ?>
+                <?php endforeach; ?>
+            <?php } ?>
+
 
             localStorage.setItem('theme', 'light');
 

@@ -51,17 +51,10 @@
                     </button>
                 </div>
             </div>
-            <!-- <div class="card-body text-primary justify-content-center align-items-center m-auto">
-                ?= view('layouts/plugins/v_countdown_v2') ?>
-            </div> -->
 
+            <!-- <div class="card-body p-0 no-wrap justify-content-center align-items-center m-auto" style="height: 25vh; overflow-y: auto"> -->
 
-            <style>
-
-            </style>
-
-
-            <div class="card-body p-0 no-wrap justify-content-center align-items-center m-auto" style="height: 25vh; overflow-y: auto">
+            <div class="card-body p-0 no-wrap justify-content-center align-items-center ml-0 mr-0 mt-auto mb-auto" style="height: 25vh; overflow-y: auto">
                 <?= view('layouts/plugins/v_countdown_v2') ?>
             </div>
             <!-- /.CardBody -->

@@ -359,49 +359,64 @@
 
 
 <ul class="cd-list cd-list-in-card pl-2 pr-2 list-group-small">
-    <?php $cd_c = 0 ?>
-    <li class="item">
-        <div class="cd-title mt-2 mb-2">
-            <a href="javascript:void(0)" class="">
-                <h6 class="bg-light p-2 border-top border-bottom mb-0">
-                    Countdown Title 1
-                    <span class="badge badge-warning badge-secondary float-right">1</span>
-                </h6>
-            </a>
-        </div>
-        <div class="cd-timer justify-content-center align-items-center m-auto">
-            <div class="container mr-0 pr-0">
-                <div class="flipper flipper-dark flipper-dark-labels" data-reverse="true" data-datetime="2024-03-13 00:00:00" data-template="ddd|HH|ii|ss" data-labels="Days|Hours|Minutes|Seconds" id="myFlipper"></div>
-                <!-- <div class="flipper flipper-dark flipper-dark-labels" data-reverse="false" data-datetime="2025-03-14 00:00:00" data-template="d|HH|i|s" data-labels="Date|Hours|Minutes|Seconds" id="modalFlipper"></div> -->
-            </div>
-        </div>
-        <div class="cd-description text-left border-top mt-2 mb-8 pl-2 pr-2">
-            This is Countdown descriptions, set it trough admin account
-        </div>
-    </li>
+    <?php {
+        $i = 0;
+        foreach ($countdown_data as $index => $cd) :
+            if ($cd['countdown_status'] == "active") { ?>
 
-    <div class="collapse cd-list cd-list-in-card" id="moreCountdowns">
-        <li class="item">
-            <div class="cd-title mt-2 mb-2">
-                <a href="javascript:void(0)" class="">
-                    <h6 class="bg-light p-2 border-top border-bottom mb-0">
-                        Countdown Title 1
-                        <span class="badge badge-warning badge-secondary float-right">1</span>
-                    </h6>
-                </a>
-            </div>
-            <div class="cd-timer justify-content-center align-items-center m-auto">
-                <div class="container mr-0 pr-0">
-                    <div class="flipper flipper-dark flipper-dark-labels" data-reverse="true" data-datetime="2024-03-13 00:00:00" data-template="ddd|HH|ii|ss" data-labels="Days|Hours|Minutes|Seconds" id="myFlipper"></div>
-                    <!-- <div class="flipper flipper-dark flipper-dark-labels" data-reverse="false" data-datetime="2025-03-14 00:00:00" data-template="d|HH|i|s" data-labels="Date|Hours|Minutes|Seconds" id="modalFlipper"></div> -->
-                </div>
-            </div>
-            <div class="cd-description text-left border-top mt-2 mb-8 pl-2 pr-2">
-                This is Countdown descriptions, set it trough admin account
-            </div>
-        </li>
+                <?php if ($i >= 1) { ?>
+                    <div class="collapse cd-list cd-list-in-card mb-4" id="moreCountdowns">
+                        <li class="item<?= !$index ? " " . $cd['countdown_alt'] : '' ?>">
+                            <div class="cd-title mt-2 mb-2">
+                                <a href="javascript:void(0)" class="">
+                                    <h6 class="bg-light p-2 border-top border-bottom mb-0">
+                                        <?= $cd['countdown_title'] ?>
+                                        <span class="badge badge-warning badge-secondary float-right"><?= $cd['countdown_target_date'] ?></span>
+                                    </h6>
+                                </a>
+                            </div>
+                            <div class="cd-timer justify-content-center align-items-center m-auto">
+                                <div class="container mr-0 pr-0">
+                                    <div class="flipper flipper-dark flipper-dark-labels" data-reverse="true" data-datetime="<?= $cd['countdown_target_date'] ?>" data-template="ddd|HH|ii|ss" data-labels="Days|Hours|Minutes|Seconds" id="<?= $cd['countdown_alt'] ?>"></div>
+                                    <!-- <div class="flipper flipper-dark flipper-dark-labels" data-reverse="false" data-datetime="2025-03-14 00:00:00" data-template="d|HH|i|s" data-labels="Date|Hours|Minutes|Seconds" id="modalFlipper"></div> -->
+                                </div>
+                            </div>
+                            <div class="cd-description text-left border-top mt-2 mb-8 pl-2 pr-2">
+                                <?= $cd['countdown_desc'] ?>
+                            </div>
+                        </li>
 
-    </div>
+                    </div>
+
+                <?php $i += 1;
+                } else { ?>
+                    <li class="item<?= !$index ? " " . $cd['countdown_alt'] : '' ?> mb-4">
+                        <div class="cd-title mt-2 mb-2">
+                            <a href="javascript:void(0)" class="">
+                                <h6 class="bg-light p-2 border-top border-bottom mb-0">
+                                    <?= $cd['countdown_title'] ?>
+                                    <span class="badge badge-warning badge-secondary float-right"><?= $cd['countdown_target_date'] ?></span>
+                                </h6>
+                            </a>
+                        </div>
+                        <div class="cd-timer justify-content-center align-items-center m-auto">
+                            <div class="container mr-0 pr-0">
+                                <div class="flipper flipper-dark flipper-dark-labels" data-reverse="true" data-datetime="<?= $cd['countdown_target_date'] ?>" data-template="ddd|HH|ii|ss" data-labels="Days|Hours|Minutes|Seconds" id="<?= $cd['countdown_alt'] ?>"></div>
+                                <!-- <div class="flipper flipper-dark flipper-dark-labels" data-reverse="false" data-datetime="2025-03-14 00:00:00" data-template="d|HH|i|s" data-labels="Date|Hours|Minutes|Seconds" id="modalFlipper"></div> -->
+                            </div>
+                        </div>
+                        <div class="cd-description text-left border-top mt-2 mb-8 pl-2 pr-2">
+                            <?= $cd['countdown_desc'] ?>
+                        </div>
+                    </li>
+
+                <?php $i += 1;
+                } ?>
+
+            <?php } ?>
+    <?php endforeach;
+    } ?>
+
 </ul>
 
 

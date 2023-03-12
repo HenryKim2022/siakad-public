@@ -364,6 +364,14 @@
                 localStorage.setItem('theme', 'dark');
 
             } else {
+                if (!document.body.classList.contains('light-mode')) {
+                    document.body.classList.add("light-mode");
+                }
+                if (inputFields.classList.contains('navbar-dark')) {
+                    inputFields.classList.add('navbar-light');
+                    inputFields.classList.remove('navbar-dark');
+                }
+
                 localStorage.setItem('theme', 'light');
             }
 
@@ -371,28 +379,7 @@
     </script>
 
 
-    <!-- Dark/Light Slider -->
-    <script>
-        var toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-        var currentTheme = localStorage.getItem('theme');
-        var inputFields = document.querySelector('input');
 
-        if (currentTheme) {
-            if (currentTheme === 'dark') {
-                if (!document.body.classList.contains('dark-mode')) {
-                    document.body.classList.add("dark-mode");
-                }
-                if (inputFields.classList.contains('navbar-light')) {
-                    inputFields.classList.add('navbar-dark');
-                    inputFields.classList.remove('navbar-light');
-                }
-
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
-
-        }
-    </script>
 
 
 

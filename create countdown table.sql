@@ -11,5 +11,6 @@ CREATE TABLE IF NOT EXISTS countdowns_data(
     countdown_target_date datetime NULL 
 );
 
-INSERT INTO countdowns_data VALUE
-    (1,"Title: Countdown 1","cd1","active","This is countdown 1 descriptions","https://google.co.id","2023-3-18");
+INSERT INTO countdowns_data VALUES
+    (1,"Title: Countdown 1","cd1","active","This is countdown 1 descriptions","https://google.co.id","2023-3-18"),
+    (2,"Title: Countdown 2","cd2","active","This is countdown 2 descriptions","https://google.co.id","2023-3-25");
