@@ -135,12 +135,12 @@ if (!empty($cd_datas)) { ?>
 
 <!-- Dark/Light Slider -->
 <script>
-    var toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-    var currentTheme = localStorage.getItem('theme');
-    var mainHeader = document.querySelector('.main-header');
-    var inputFields = document.querySelector('input');
+    let toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    let currentTheme = localStorage.getItem('theme');
+    let mainHeader = document.querySelector('.main-header');
+    let inputFields = document.querySelector('input');
 
-    // var flipperFields = document.getElementById("myFlipper");
+    // let flipperFields = document.getElementById("myFlipper");
 
     <?php
     $cd_datas = session()->getFlashdata('countdown_data');
@@ -148,7 +148,7 @@ if (!empty($cd_datas)) { ?>
         <?php
         foreach ($cd_datas as $cdata) :
             if ($cdata['countdown_status'] == "active" && !$cdata['countdown_alt'] == null) { ?>
-                var <?= esc('flipperFields' . $cdata['countdown_alt']) ?> = document.getElementById("<?= esc($cdata['countdown_alt']) ?>");
+                let <?= esc('flipperFields' . $cdata['countdown_alt']) ?> = document.getElementById("<?= esc($cdata['countdown_alt']) ?>");
 
             <?php } ?>
         <?php endforeach; ?>
@@ -307,14 +307,14 @@ if (!empty($cd_datas)) { ?>
                 <?php
                 foreach ($cd_datas as $cdata) :
                     if ($cdata['countdown_status'] == "active" && !$cdata['countdown_alt'] == null) { ?>
-                        if (<?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.contains('flipper-dark')) {
-                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.add('flipper-light');
-                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.remove('flipper-dark');
-                        }
-                        if (<?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.contains('flipper-dark-labels')) {
-                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.add('flipper-light-labels');
-                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.remove('flipper-dark-labels');
-                        }
+                        // if (?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.contains('flipper-dark')) {
+                        // ?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.add('flipper-light');
+                        // ?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.remove('flipper-dark');
+                        // }
+                        // if (?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.contains('flipper-dark-labels')) {
+                        // ?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.add('flipper-light-labels');
+                        // ?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.remove('flipper-dark-labels');
+                        // }
 
                     <?php } ?>
                 <?php endforeach; ?>

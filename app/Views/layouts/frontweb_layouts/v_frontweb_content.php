@@ -82,7 +82,7 @@
                 <ul class="products-list product-list-in-card pl-2 pr-2 list-group-small">
                     <li class="item">
                         <div class="product-img">
-                            <img src="adminLTE/dist/img/default-150x150.png" alt="Article Img" class="img-size-50">
+                            <img src="<?= base_url() ?>/adminLTE/dist/img/default-150x150.png" alt="Article Img" class="img-size-50">
                         </div>
                         <div class="product-info">
                             <a href="javascript:void(0)" class="product-title">Samsung TV
@@ -95,7 +95,7 @@
                     <!-- /.item -->
                     <li class="item">
                         <div class="product-img">
-                            <img src="adminLTE/dist/img/default-150x150.png" alt="Article Img" class="img-size-50">
+                            <img src="<?= base_url() ?>/adminLTE/dist/img/default-150x150.png" alt="Article Img" class="img-size-50">
                         </div>
                         <div class="product-info">
                             <a href="javascript:void(0)" class="product-title">PlayStation 4
@@ -108,7 +108,7 @@
                     <!-- /.item -->
                     <li class="item">
                         <div class="product-img">
-                            <img src="adminLTE/dist/img/default-150x150.png" alt="Article Img" class="img-size-50">
+                            <img src="<?= base_url() ?>/adminLTE/dist/img/default-150x150.png" alt="Article Img" class="img-size-50">
                         </div>
                         <div class="product-info">
                             <a href="javascript:void(0)" class="product-title">PlayStation 4
@@ -123,7 +123,7 @@
                         <h6 class="bg-light p-2 border-top border-bottom mb-0">More articles</h6>
                         <li class="item">
                             <div class="product-img">
-                                <img src="adminLTE/dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                                <img src="<?= base_url() ?>/adminLTE/dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
                             </div>
                             <div class="product-info">
                                 <a href="javascript:void(0)" class="product-title">Samsung TV
@@ -136,7 +136,7 @@
                         <!-- /.item -->
                         <li class="item">
                             <div class="product-img">
-                                <img src="adminLTE/dist/img/default-150x150.png" alt="Article Img" class="img-size-50">
+                                <img src="<?= base_url() ?>/adminLTE/dist/img/default-150x150.png" alt="Article Img" class="img-size-50">
                             </div>
                             <div class="product-info">
                                 <a href="javascript:void(0)" class="product-title">PlayStation 99
@@ -149,7 +149,7 @@
                         <!-- /.item -->
                         <li class="item">
                             <div class="product-img">
-                                <img src="adminLTE/dist/img/default-150x150.png" alt="Article Img" class="img-size-50">
+                                <img src="<?= base_url() ?>/adminLTE/dist/img/default-150x150.png" alt="Article Img" class="img-size-50">
                             </div>
                             <div class="product-info">
                                 <a href="javascript:void(0)" class="product-title">PlayStation 40
