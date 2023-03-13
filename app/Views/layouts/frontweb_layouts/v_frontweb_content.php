@@ -182,7 +182,7 @@
 
         <div class="card card-primary card-outline collapsed-card">
             <div class="card-header" data-card-widget="collapse">
-                <h5 class="card-title m-0"><i class="fas fa-map-marker-alt mr-2" data-toggle="modal" data-target="#modal-add-std-data"></i>Campus Location</h5>
+                <h5 class="card-title m-0"><i class="fas fa-map-marker-alt mr-2" data-toggle="modal" data-target="#modal-add-std-data"></i>Institution Location</h5>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-toggle="modal" data-target="#modal-add-std-data">

@@ -365,7 +365,7 @@
 
         /* Sidebar: Help Default Hide */
         nav>ul.nav.nav-pills>li.nav-item:nth-child(16),
-        div.addtional-nav {
+        span.addtional-nav {
             display: none !important;
         }
 
@@ -416,7 +416,7 @@
 
             /* Sidebar: Help Show on mobile */
             nav>ul.nav.nav-pills>li.nav-item:nth-child(16),
-            div.addtional-nav {
+            span.addtional-nav {
                 display: block !important;
             }
 

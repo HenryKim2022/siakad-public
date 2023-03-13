@@ -66,7 +66,7 @@
                             <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search" autocomplete="on">
                             <div class="input-group-append">
                                 <button class="btn btn-navbar" type="submit">
-                                    <i class="fas fa-search"></i>
+                                    <i class="fad fa-search fa-lg"></i>
                                 </button>
 
                             </div>
@@ -118,7 +118,7 @@
             <!-- Navbar Search -->
             <li class="nav-item">
                 <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-                    <i class="fas fa-search"></i>
+                    <i class="fad fa-search fa-lg"></i>
                 </a>
                 <div class="navbar-search-block" style="display: none; backdrop-filter: blur(10px);">
                     <form class="form-inline">
@@ -126,7 +126,7 @@
                             <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search" autocomplete="on">
                             <div class="input-group-append">
                                 <button class="btn btn-navbar" type="submit">
-                                    <i class="fas fa-search"></i>
+                                    <i class="fad fa-search"></i>
                                 </button>
                                 <button class="btn btn-navbar" type="button" data-widget="navbar-search">
                                     <i class="fas fa-times"></i>
@@ -170,7 +170,7 @@
             <?php if (session()->get('log') == true) { ?>
                 <li class="nav-item">
                     <a class="nav-link pl-0 pr-0" data-widget="signout" href="<?= base_url('auth/signout') ?>" role="button">
-                        <i class="fas fa-sign-out-alt fa-lg"></i>
+                        <i class="fad fa-power-off fa-lg"></i>
                     </a>
                 </li>
             <?php } else { ?>

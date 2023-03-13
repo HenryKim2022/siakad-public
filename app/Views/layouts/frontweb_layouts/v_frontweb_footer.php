@@ -307,14 +307,14 @@ if (!empty($cd_datas)) { ?>
                 <?php
                 foreach ($cd_datas as $cdata) :
                     if ($cdata['countdown_status'] == "active" && !$cdata['countdown_alt'] == null) { ?>
-                        // if (?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.contains('flipper-dark')) {
-                        // ?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.add('flipper-light');
-                        // ?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.remove('flipper-dark');
-                        // }
-                        // if (?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.contains('flipper-dark-labels')) {
-                        // ?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.add('flipper-light-labels');
-                        // ?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.remove('flipper-dark-labels');
-                        // }
+                        if (<?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.contains('flipper-dark')) {
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.add('flipper-light');
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.remove('flipper-dark');
+                        }
+                        if (<?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.contains('flipper-dark-labels')) {
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.add('flipper-light-labels');
+                            <?= esc('flipperFields' . $cdata['countdown_alt']) ?>.classList.remove('flipper-dark-labels');
+                        }
 
                     <?php } ?>
                 <?php endforeach; ?>

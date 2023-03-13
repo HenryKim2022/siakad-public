@@ -289,7 +289,7 @@
 
                  <?php } ?>
 
-                 <div class="addtional-nav">
+                 <div class="addtional-nav ml-1">
                      <li class="nav-header">
                          <hr class="bg-gray mt-0 mb-0">
                      </li>

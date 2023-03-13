@@ -68,7 +68,7 @@
       <ul class="navbar-nav ml-auto">
           <li class="nav-item">
               <a class="nav-link" data-widget="signout" href="<?= base_url('auth/signout') ?>" role="button">
-                  <i class="fas fa-sign-out-alt fa-lg"></i>
+                  <i class="fad fa-power-off fa-lg"></i>
               </a>
           </li>
 
